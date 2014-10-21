@@ -1,14 +1,13 @@
 %define oname faraday
 
 Name:       rubygem-%{oname}
-Version:    0.4.6
-Release:    %mkrel 1
+Version:    0.9.0
+Release:    1
 Summary:    HTTP/REST API client library
 Group:      Development/Ruby
 License:    MIT
 URL:        http://github.com/technoweenie/faraday
-Source0:    http://rubygems.org/downloads/%{oname}-%{version}.gem
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root
+Source0:    http://rubygems.org/gems/faraday-0.9.0.gem
 Requires:   rubygems
 BuildRequires: rubygems
 BuildArch:  noarch
@@ -23,7 +22,6 @@ HTTP/REST API client library with pluggable components
 %build
 
 %install
-rm -rf %{buildroot}
 mkdir -p %{buildroot}%{ruby_gemdir}
 gem install --local --install-dir %{buildroot}%{ruby_gemdir} \
             --force --rdoc %{SOURCE0}
@@ -31,7 +29,6 @@ gem install --local --install-dir %{buildroot}%{ruby_gemdir} \
 rm -f %{buildroot}%{ruby_gemdir}/gems/%{oname}-%{version}/.gitignore
 
 %clean
-rm -rf %{buildroot}
 
 %files
 %defattr(-, root, root, -)
@@ -47,10 +44,3 @@ rm -rf %{buildroot}
 %doc %{ruby_gemdir}/gems/%{oname}-%{version}/%{oname}.gemspec
 %{ruby_gemdir}/cache/%{oname}-%{version}.gem
 %{ruby_gemdir}/specifications/%{oname}-%{version}.gemspec
-
-
-%changelog
-* Mon Dec 20 2010 Rémy Clouard <shikamaru@mandriva.org> 0.4.6-1mdv2011.0
-+ Revision: 623463
-- import rubygem-faraday
-
