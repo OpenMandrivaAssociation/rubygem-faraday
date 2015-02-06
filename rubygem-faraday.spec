@@ -3,7 +3,7 @@
 Summary:	HTTP/REST API client library
 Name:		rubygem-%{rbname}
 Version:	0.9.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Ruby
 Url:		http://rubygems.org/gems/%{rbname}
